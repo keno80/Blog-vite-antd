@@ -5,7 +5,8 @@ import 'ant-design-vue/es/grid/style/index.css'
 import 'ant-design-vue/es/style/index.css'
 import 'ant-design-vue/es/tag/style/index.css'
 import 'ant-design-vue/es/divider/style/index.css'
-import {Avatar, Button, Col, Divider, Layout, Row, Tag} from "ant-design-vue";
+import 'ant-design-vue/es/list/style/index.css'
+import {Avatar, Button, Col, Divider, Layout, List, Row, Tag} from "ant-design-vue";
 
 const components = {
   install: (app => {
@@ -14,6 +15,7 @@ const components = {
     app.use(Col)
     app.use(Divider)
     app.use(Layout)
+    app.use(List)
     app.use(Row)
     app.use(Tag)
   })
