@@ -13,7 +13,7 @@
                       src="https://images.pexels.com/photos/4856247/pexels-photo-4856247.jpeg?crop=entropy&cs=srgb&dl=pexels-elijah-o%27donnell-4856247.jpg&fit=crop&fm=jpg&h=945&w=640"></a-avatar>
           </div>
           <div class="about-introduce">
-            <div class="my-name">{{ userInfo.username }}</div>
+            <div class="my-name">{{ userInfo.nickname }}</div>
             <div style="margin-bottom: 1rem">{{ userInfo.sign }}</div>
             <div class="about-tag">
               <!--              <a-tag color="blue">新手码农</a-tag>-->
