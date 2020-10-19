@@ -40,10 +40,16 @@ export default {
   setup() {
     const data = reactive({
       articleList: [],
+      page: 1,
+      size: 10,
+      searchQuery: {
+        title: '',
+        type: ''
+      }
     })
 
     function fetchData() {
-      articleApi.userInfo().then(res => {
+      articleApi.userInfo(data.page, data.size, data.searchQuery).then(res => {
         console.log(res);
         data.articleList = res.data.response
       })
