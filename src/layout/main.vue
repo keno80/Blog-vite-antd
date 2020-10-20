@@ -52,10 +52,9 @@ export default {
     function fetchData() {
       dashboardApi.userInfo().then(res => {
         if (res.data.code === 200) {
-          data.userInfo = res.data.response[0]
+          data.userInfo = res.data.data[0]
           data.userInfo.tags = JSON.parse(data.userInfo.tags)
         }
-        console.log(res);
       })
     }
 

@@ -50,8 +50,8 @@ export default {
 
     function fetchData() {
       articleApi.userInfo(data.page, data.size, data.searchQuery).then(res => {
-        console.log(res);
-        data.articleList = res.data.response
+        // console.log(res);
+        data.articleList = res.data.data
       })
     }
 
