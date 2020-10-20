@@ -13,9 +13,15 @@ const routes = [
         name: 'home',
         component: Home,
         meta: {title: '首页'}
+      },
+      {
+        path: 'article/:id',
+        name: 'article',
+        component: () => import('../views/Article/index.vue'),
+        meta: {title: '文章详情页'}
       }
     ]
-  }
+  },
 ]
 
 const router = createRouter({

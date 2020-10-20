@@ -14,10 +14,9 @@
             </template>
             <a-list-item-meta :description="item.description">
               <template v-slot:title>
-                <a :href="item.href" class="title_style">{{ item.title }}</a>
+                <a :href="item.href" class="title_style" @click="toArticle(item)">{{ item.title }}</a>
               </template>
             </a-list-item-meta>
-            <div v-html="item.introduce"></div>
           </a-list-item>
         </template>
       </a-list>
@@ -27,6 +26,7 @@
 
 <script>
 import {reactive, toRefs} from 'vue'
+import {useRouter} from 'vue-router'
 import {StarOutlined, LikeOutlined, MessageOutlined} from '@ant-design/icons-vue';
 import articleApi from "../../api/article";
 
@@ -49,16 +49,24 @@ export default {
     })
 
     function fetchData() {
-      articleApi.userInfo(data.page, data.size, data.searchQuery).then(res => {
-        // console.log(res);
+      articleApi.articleList(data.page, data.size, data.searchQuery).then(res => {
+        console.log(res);
         data.articleList = res.data.data
+      })
+    }
+
+    const router = useRouter()
+    function toArticle(data) {
+      router.push({
+        path: `/article/${data.article_id}`
       })
     }
 
     const refData = toRefs(data)
     return {
       ...refData,
-      fetchData
+      fetchData,
+      toArticle
     }
   },
   mounted() {
