@@ -7,11 +7,13 @@ import 'ant-design-vue/es/tag/style/index.css'
 import 'ant-design-vue/es/divider/style/index.css'
 import 'ant-design-vue/es/list/style/index.css'
 import 'ant-design-vue/es/input/style/index.css'
-import {Avatar, Button, Col, Divider, Input, Layout, List, Row, Tag} from "ant-design-vue";
+import 'ant-design-vue/es/back-top/style/index.css'
+import {Avatar, BackTop, Button, Col, Divider, Input, Layout, List, Row, Tag} from "ant-design-vue";
 
 const components = {
   install: (app => {
     app.use(Avatar)
+    app.use(BackTop)
     app.use(Button)
     app.use(Col)
     app.use(Divider)

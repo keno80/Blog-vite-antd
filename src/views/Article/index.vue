@@ -11,6 +11,11 @@
     <div class="content">
       <v-md-preview :text="article.content"></v-md-preview>
     </div>
+    <a-back-top>
+      <div class="ant-back-top-inner">
+        UP
+      </div>
+    </a-back-top>
   </div>
 </template>
 
@@ -68,6 +73,22 @@ export default {
     color: #999999;
     text-align: center;
     font-size: 14px;
+  }
+
+  .ant-back-top {
+    bottom: 100px;
+    right: 200px;
+  }
+
+  .ant-back-top-inner {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    border-radius: 4px;
+    background-color: #1088e9;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
   }
 }
 </style>

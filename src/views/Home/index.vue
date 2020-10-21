@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="content-box">
-      <a-list item-layout="vertical" size="large" :data-source="articleList">
+      <a-list item-layout="vertical" size="large" :data-source="articleList" :loading="Loading">
         <template v-slot:renderItem="{ item, index }">
           <a-list-item key="item.title">
             <template v-slot:actions>
@@ -40,6 +40,7 @@ export default {
   setup() {
     const data = reactive({
       articleList: [],
+      Loading: true,
       page: 1,
       size: 10,
       searchQuery: {
@@ -49,9 +50,14 @@ export default {
     })
 
     function fetchData() {
+      data.Loading = true
       articleApi.articleList(data.page, data.size, data.searchQuery).then(res => {
-        console.log(res);
-        data.articleList = res.data.data
+        if (res.data.code === 200) {
+          data.Loading = false
+          data.articleList = res.data.data
+        } else {
+          data.Loading = false
+        }
       })
     }
 
