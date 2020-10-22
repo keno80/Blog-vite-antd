@@ -29,6 +29,7 @@
             </a>
           </div>
         </div>
+        <div class="anchor_box about"/>
       </a-col>
     </a-row>
   </div>
@@ -94,11 +95,9 @@ export default {
     min-height: calc(100vh - 140px);
 
     .box-right {
+      text-align: center;
+      padding: 16px;
       background-color: #ffffff;
-      margin-left: 10px;
-      border-radius: 4px;
-      border: 1px solid #efefef;
-      padding: 10px;
 
       .about-introduce {
         margin-bottom: 1rem;
@@ -124,10 +123,16 @@ export default {
     }
 
     .about {
+      margin-left: 10px;
+      border-radius: 4px;
+      border: 1px solid #efefef;
+    }
+
+    .anchor_box {
+      margin-top: 10px;
       text-align: center;
-      padding: 16px;
+      background-color: #ffffff;
     }
   }
 }
-
 </style>
