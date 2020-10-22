@@ -91,6 +91,7 @@ export default {
   .main-content {
     max-width: 1100PX;
     margin: 0 auto;
+    min-height: calc(100vh - 140px);
 
     .box-right {
       background-color: #ffffff;

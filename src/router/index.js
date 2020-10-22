@@ -1,4 +1,4 @@
-import {createRouter, createWebHashHistory} from "vue-router";
+import {createRouter, createWebHistory} from "vue-router";
 import Layout from "../layout/index.vue";
 import Home from '../views/Home/index.vue'
 
@@ -25,8 +25,13 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title + ' -- 爱吃鱼的猫的博客'
+  next()
 })
 
 export default router
